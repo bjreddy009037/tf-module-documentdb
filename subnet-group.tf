@@ -1,4 +1,4 @@
-resource "aws_elasticache_subnet_group" "main" {
+resource "aws_docdb_subnet_group" "main" {
   name       = "${var.COMPONENT}-${var.ENV}"
   subnet_ids = data.terraform_remote_state.vpc.outputs.SUBNET_IDS
 
