@@ -1,12 +1,12 @@
-resource "aws_security_group" "main" {
-  name        = "allow_elasticache_redis-${var.COMPONENT}-${var.ENV}"
-  description = "allow_elasticache_redis-${var.COMPONENT}-${var.ENV}"
+resource "aws_security_group" "sgfordocdb" {
+  name        = "allow_documentdb-${var.COMPONENT}-${var.ENV}"
+  description = "allow_documentdb-${var.COMPONENT}-${var.ENV}"
   vpc_id = data.terraform_remote_state.vpc.outputs.VPC_ID
 
   ingress {
-    description      = "REDIS"
-    from_port        = 6379
-    to_port          = 6379
+    description      = "MONGODB"
+    from_port        = 27017
+    to_port          = 27017
     protocol         = "tcp"
     cidr_blocks      = [data.terraform_remote_state.vpc.outputs.VPC_CIDR]
 
@@ -21,6 +21,5 @@ resource "aws_security_group" "main" {
   }
 
   tags = {
-    Name = "allow_elasticache_redis-${var.COMPONENT}-${var.ENV}"
-  }
+    Name = "allow_documentdb-${var.COMPONENT}-${var.ENV}"
 }

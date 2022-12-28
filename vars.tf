@@ -6,4 +6,4 @@ variable "ENV" {}
 variable "COMPONENT" {}
 variable "NODE_COUNT" {}
 variable "FAMILY" {}
-variable "SKIP_FINAL_ENDPOINT" {}
+variable "SKIP_FINAL_SNAPSHOT" {}
