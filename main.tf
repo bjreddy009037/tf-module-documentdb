@@ -12,7 +12,7 @@ resource "aws_docdb_cluster" "main" {
 
 resource "aws_docdb_cluster_instance" "docdb_instance" {
   count              = var.NODE_COUNT
-  identifier         = "docdb-cluster-demo-${count.index}"
+  identifier         = "${var.COMPONENT}-${var.ENV}-node${count.index}"
   cluster_identifier = aws_docdb_cluster.main.id
   instance_class     = var.NODE_TYPE
 }
