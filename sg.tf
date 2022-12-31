@@ -1,4 +1,4 @@
-resource "aws_security_group" "sgfordocdb" {
+resource "aws_security_group" "main" {
   name        = "allow_documentdb-${var.COMPONENT}-${var.ENV}"
   description = "allow_documentdb-${var.COMPONENT}-${var.ENV}"
   vpc_id      = var.VPC_ID
