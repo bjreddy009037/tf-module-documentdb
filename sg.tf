@@ -1,7 +1,7 @@
 resource "aws_security_group" "sgfordocdb" {
   name        = "allow_documentdb-${var.COMPONENT}-${var.ENV}"
   description = "allow_documentdb-${var.COMPONENT}-${var.ENV}"
-  vpc_id      = varVPC_ID
+  vpc_id      = var.VPC_ID
 
   ingress {
     description = "MONGODB"
